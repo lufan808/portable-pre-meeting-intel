@@ -135,15 +135,18 @@ Talking points must:
 
 ### Optional Feishu / Lark document mode
 
-When the user provides a Feishu/Lark document URL or token, or the host explicitly exposes the current document context, use that document as both the input and output artifact.
+Treat the current chat request as the primary input. Do not ask the user to repeat the request inside a Feishu/Lark document.
 
-1. Read the current document before editing. Locate the `研究输入` section and extract the person, company or role, meeting purpose, and signal window.
-2. Preserve the existing document structure, comments, and embedded resources. Do not create a separate document unless the user asks for one.
-3. Run the same four evidence streams and six-section synthesis described above.
-4. Write the result into the document's `研究结果` section. Prefer section- or block-level replacement/insertion over clearing and rebuilding the whole document.
-5. Fetch the document again after writing and verify that the result is present in the same document before reporting completion.
+When the user asks for a Feishu/Lark deliverable and compatible document tools are available:
 
-If the document URL/token or compatible document tools are unavailable, ask for the document link when needed. Otherwise return the complete Markdown brief and clearly state that it was not written to Feishu/Lark.
+1. Preserve the user's original request verbatim as `raw_request` before parsing it.
+2. Extract the person, company or role, meeting purpose, and signal window from that request.
+3. If the user supplied a document URL or token, read the current document before editing and use it as the output document. Otherwise create a new document.
+4. Put the original request and parsed research parameters at the top of the document under `研究输入`.
+5. Put the six-section brief under `研究结果`. For an existing document, preserve comments and embedded resources and prefer section- or block-level replacement/insertion over clearing and rebuilding the whole document.
+6. Fetch the document again after writing and verify that both the input record and the result are present in the same document before reporting completion.
+
+If compatible document tools are unavailable, return the same input-plus-result structure as Markdown and clearly state that it was not written to Feishu/Lark. Do not claim that a document was created or updated without verification.
 
 ### Step 5 — Deliver the brief
 
