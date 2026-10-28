@@ -133,6 +133,18 @@ Talking points must:
 - include Chinese and English versions when the meeting is likely to be in English;
 - avoid implying that the user agrees with an unverified criticism.
 
+### Optional Feishu / Lark document mode
+
+When the user provides a Feishu/Lark document URL or token, or the host explicitly exposes the current document context, use that document as both the input and output artifact.
+
+1. Read the current document before editing. Locate the `研究输入` section and extract the person, company or role, meeting purpose, and signal window.
+2. Preserve the existing document structure, comments, and embedded resources. Do not create a separate document unless the user asks for one.
+3. Run the same four evidence streams and six-section synthesis described above.
+4. Write the result into the document's `研究结果` section. Prefer section- or block-level replacement/insertion over clearing and rebuilding the whole document.
+5. Fetch the document again after writing and verify that the result is present in the same document before reporting completion.
+
+If the document URL/token or compatible document tools are unavailable, ask for the document link when needed. Otherwise return the complete Markdown brief and clearly state that it was not written to Feishu/Lark.
+
 ### Step 5 — Deliver the brief
 
 Write a Markdown artifact with a title such as:
