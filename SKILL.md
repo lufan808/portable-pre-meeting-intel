@@ -15,7 +15,7 @@ Prepare a source-backed, BD-ready brief that helps the user walk into a first me
 - Deliver the finished brief as Markdown unless the user asks for another format.
 - Preserve the distinction between fact, source-reported claim, community opinion, and assistant inference.
 
-The original internal workflow may also provide an optional real-time social-source enrichment layer. Use it only when the current environment exposes it and only to verify a recent public post; the core research and synthesis must remain complete without it.
+The workflow may optionally use a real-time public social-source enrichment layer when the current environment provides one. Use it only to verify a recent public post; the core research and synthesis must remain complete without it.
 
 ## Trigger and inputs
 
@@ -81,7 +81,7 @@ For each usable signal, record:
 
 ### Step 1.5 — Optional source enrichment
 
-The internal workflow may use **sensight** as a source-enrichment layer when a real-time public-post lookup service is available. Its purpose is narrow: upgrade a verified account homepage into the actual recent post URL, timestamp, and short verbatim excerpt.
+If the current environment provides a real-time public-post lookup service, such as **sensight**, use it only as a source-enrichment layer. Its purpose is narrow: upgrade a verified account homepage into the actual recent post URL, timestamp, and short verbatim excerpt.
 
 Apply these rules:
 
