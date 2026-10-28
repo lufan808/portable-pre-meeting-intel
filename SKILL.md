@@ -1,18 +1,17 @@
 ---
 name: portable-pre-meeting-intel
-description: Research a person before a meeting using recent public signals, their own voice, community reaction, third-party coverage, and verified identity anchors. Use for pre-meeting research, background briefing, or questions to ask someone; works without Mira, sensight, Feishu, or any proprietary service.
+description: Research a person before a meeting using recent public signals, their own voice, community reaction, third-party coverage, and verified identity anchors. Use for pre-meeting research, background briefing, or questions to ask someone.
 ---
 
 # Portable Pre-Meeting Intel
 
 Prepare a source-backed brief that helps the user walk into a first meeting with a clear view of what the person is doing and saying now. This is not a generic biography and not a dossier. The useful signal is the difference between the person's own framing and how other people interpret the same work.
 
-## Portability contract
+## Operating principles
 
-- Use the host's available web search, page-opening, browser, file, and writing tools. Do not assume a specific tool name, MCP server, API, runtime, or provider.
-- Never require Mira, sensight, `lark-docs-skill`, a proprietary social-search backend, or Feishu. If a host has an optional connector, use it only when available and disclose its use.
+- Use the available web search, page-opening, browser, file, and writing tools in the current environment.
 - If parallel agents are available, run the four research streams in parallel. If they are not, run the same streams sequentially; do not omit a stream silently.
-- Save the finished brief as Markdown when no document connector is available. A document connector is an optional delivery layer, not a research dependency.
+- Deliver the finished brief as Markdown unless the user asks for another format.
 
 ## Trigger and inputs
 
@@ -106,13 +105,13 @@ Talking points must:
 - include Chinese and English versions when the meeting is likely to be in English;
 - avoid implying that the user agrees with an unverified criticism.
 
-### 6. Deliver locally first
+### 6. Deliver the brief
 
 Write a Markdown artifact with a title such as:
 
 `会前情报｜{name} @ {company or role}｜{YYYY-MM-DD}`
 
-If the host supports a document connector, offer or create a document only when the user requested it or the host's workflow clearly calls for it. Do not block completion because Feishu or another connector is unavailable.
+Save the brief where the user can reuse it. Keep the Markdown version as the source of truth when another delivery format is requested.
 
 ## Final quality gate
 
@@ -125,4 +124,4 @@ Before finishing, verify:
 - self-versus-others comparison uses meaningful phrases, not isolated keywords;
 - talking points are specific, contextual, and actionable;
 - blocked sources, missing signals, and uncertain community claims are disclosed;
-- no Mira, sensight, internal endpoint, or unavailable connector is presented as a required dependency.
+- the brief explains the research boundary and does not imply access to private information.
